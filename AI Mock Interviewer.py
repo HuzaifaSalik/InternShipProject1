@@ -14,19 +14,19 @@ import os
 from dotenv import load_dotenv
 
 
-# Load environment
+
 load_dotenv()
 
 st.title("🎤 Generative AI Mock Interviewer")
 st.write("Practice interviews with AI. Choose a role and get real-time questions & feedback.")
 
-# API Key
+
 api_key = st.text_input("Enter your GROQ API Key:", type="password")
 
 if api_key:
     llm = ChatGroq(model="Gemma2-9b-It", groq_api_key=api_key)
 
-    # User Input: Role & Resume
+ 
     role = st.selectbox("Select Job Role:", 
                         ["Data Scientist", "AI Engineer", "Software Developer", "ML Researcher", "Custom Role"])
     
@@ -82,3 +82,4 @@ if api_key:
 
 else:
     st.warning("Please enter your GROQ API Key to continue.")
+
