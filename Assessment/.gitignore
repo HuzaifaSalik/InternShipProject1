@@ -1,0 +1,31 @@
+# Virtual environments -- never commit these
+assessment/
+venv/
+.venv/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Scratch
+*.log
+.ipynb_checkpoints/
+
+# Backup of the empty December template, kept locally only
+data/december_chart_inputs.template.csv
+
+# Fitted model: 6 MB binary pickle, fully reproducible via `python -m src.train`
+# (seed 42) and fragile across scikit-learn versions. Not worth committing.
+outputs/model.joblib
+
+# Note: outputs/cv_metrics.json and scorer_results/ ARE committed on purpose.
+# cv_metrics.json is the evidence behind every number in the report, and
+# candidate_december.png is a required deliverable.
